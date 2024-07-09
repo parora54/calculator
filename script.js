@@ -53,7 +53,7 @@ const buttons = document.querySelectorAll(".button");
 const display = document.querySelector("#display");
 
 buttons.forEach((button) => {
-    button.addEventListener("click", () => {
+    button.addEventListener("click", (e) => {
         if (button.id == "AC") {
             displayValue = 0;
             a = null;
@@ -111,5 +111,12 @@ buttons.forEach((button) => {
             displayValue = updateDisplay(displayValue, button.id)
             display.textContent = displayValue
         }
+    });
+    button.addEventListener("mouseenter", (e) => {
+        e.target.style.backgroundColor = "lightcoral"; 
+    });
+
+    button.addEventListener("mouseleave", (e) => {
+        e.target.style.backgroundColor = "azure"; 
     });
 });
